@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "alchem",
-  description: "alchem prototype marketplace connecting farmers, wholesalers, and transporters",
+  title: "Alchem",
+  description: "Alchem prototype marketplace connecting farmers, wholesalers, and transporters",
 };
 
 export default function RootLayout({

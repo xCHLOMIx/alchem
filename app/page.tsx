@@ -14,7 +14,7 @@ export default function Home() {
     <main className="mx-auto flex min-h-screen w-full max-w-5xl items-center bg-background p-6 md:p-10">
       <Card className="w-full">
         <CardHeader>
-          <CardTitle className="text-3xl">alchem</CardTitle>
+          <CardTitle className="text-3xl">Alchem</CardTitle>
           <CardDescription>
             A simple MVP connecting farmers, wholesalers, and transporters.
           </CardDescription>
