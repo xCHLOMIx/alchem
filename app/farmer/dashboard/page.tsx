@@ -176,8 +176,13 @@ export default function FarmerDashboard() {
                                 </Select>
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="price">Price</Label>
-                                <Input id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                                <Label htmlFor="price">Price/Unit</Label>
+                                <Input
+                                    id="price"
+                                    placeholder="e.g. 120"
+                                    value={price}
+                                    onChange={(e) => setPrice(e.target.value)}
+                                />
                             </div>
                             <div className="space-y-2 md:col-span-2">
                                 <Label htmlFor="district">District</Label>
@@ -206,7 +211,7 @@ export default function FarmerDashboard() {
                             <TableRow>
                                 <TableHead>Name</TableHead>
                                 <TableHead>Quantity</TableHead>
-                                <TableHead>Unit Price</TableHead>
+                                <TableHead>Price/Unit</TableHead>
                                 <TableHead>District</TableHead>
                             </TableRow>
                         </TableHeader>
@@ -224,7 +229,7 @@ export default function FarmerDashboard() {
                                     <TableCell>
                                         {product.quantity} {product.unit}
                                     </TableCell>
-                                    <TableCell>${product.price}</TableCell>
+                                    <TableCell>${product.price} / {product.unit}</TableCell>
                                     <TableCell>{product.district}</TableCell>
                                 </TableRow>
                             ))}

@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     if (!body.name || !body.quantity || !body.unit || !body.price) {
       return NextResponse.json(
-        { error: "name, quantity, unit and price are required" },
+        { error: "name, quantity, unit and price/unit are required" },
         { status: 400 },
       );
     }

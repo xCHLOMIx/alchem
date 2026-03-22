@@ -159,7 +159,7 @@ export default function WholesalerDashboard() {
                             <TableRow>
                                 <TableHead>Product</TableHead>
                                 <TableHead>Stock</TableHead>
-                                <TableHead>Price</TableHead>
+                                <TableHead>Unit Price</TableHead>
                                 <TableHead>District</TableHead>
                                 <TableHead>Farmer</TableHead>
                                 <TableHead>Order Qty</TableHead>
@@ -178,7 +178,7 @@ export default function WholesalerDashboard() {
                                 <TableRow key={product._id}>
                                     <TableCell>{product.name}</TableCell>
                                     <TableCell>{product.quantity} {product.unit}</TableCell>
-                                    <TableCell>${product.price}</TableCell>
+                                    <TableCell>${product.price} / {product.unit}</TableCell>
                                     <TableCell>{product.district}</TableCell>
                                     <TableCell>{product.farmerId?.name || "N/A"}</TableCell>
                                     <TableCell>
