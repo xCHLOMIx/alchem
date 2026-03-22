@@ -30,6 +30,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import { Loader } from "@/components/ui/loader";
 
 type Product = {
     _id: string;
@@ -130,7 +131,11 @@ export default function FarmerDashboard() {
     }
 
     if (loading) {
-        return <main className="p-6">Loading farmer dashboard...</main>;
+        return (
+            <main className="flex min-h-screen items-center justify-center bg-background">
+                <Loader />
+            </main>
+        );
     }
 
     return (

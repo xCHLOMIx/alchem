@@ -20,6 +20,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Loader } from "@/components/ui/loader";
 
 type Order = {
     _id: string;
@@ -87,7 +88,11 @@ export default function TransporterDashboard() {
     }
 
     if (loading) {
-        return <main className="p-6">Loading transporter dashboard...</main>;
+        return (
+            <main className="flex min-h-screen items-center justify-center bg-background">
+                <Loader />
+            </main>
+        );
     }
 
     return (
