@@ -10,6 +10,7 @@ type RegisterBody = {
   password: string;
   district: string;
   idNumber?: string;
+  vehiclePlateNumber?: string;
   carPlateNumber?: string;
   companyName?: string;
 };
@@ -27,9 +28,11 @@ export async function POST(req: Request) {
       );
     }
 
-    if (role === "transporter" && (!body.idNumber || !body.carPlateNumber)) {
+    const vehiclePlateNumber = body.vehiclePlateNumber || body.carPlateNumber;
+
+    if (role === "transporter" && (!body.idNumber || !vehiclePlateNumber)) {
       return NextResponse.json(
-        { error: "idNumber and carPlateNumber are required for transporter" },
+        { error: "idNumber and vehiclePlateNumber are required for transporter" },
         { status: 400 },
       );
     }
@@ -58,7 +61,7 @@ export async function POST(req: Request) {
       password: hashedPassword,
       district,
       idNumber: body.idNumber,
-      carPlateNumber: body.carPlateNumber,
+      carPlateNumber: vehiclePlateNumber,
       companyName: body.companyName,
     });
 
@@ -72,7 +75,7 @@ export async function POST(req: Request) {
           phone: user.phone,
           district: user.district,
           idNumber: user.idNumber,
-          carPlateNumber: user.carPlateNumber,
+          vehiclePlateNumber: user.carPlateNumber,
           companyName: user.companyName,
         },
       },

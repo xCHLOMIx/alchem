@@ -40,7 +40,7 @@ type Order = {
     status: string;
     productId?: { name?: string };
     farmerId?: { name?: string; phone?: string };
-    transporterId?: { name?: string; phone?: string; carPlateNumber?: string };
+    transporterId?: { name?: string; phone?: string; vehiclePlateNumber?: string };
 };
 
 type MeResponse = {

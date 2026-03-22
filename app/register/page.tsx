@@ -32,7 +32,7 @@ export default function RegisterPage() {
     const [district, setDistrict] = useState("");
 
     const [idNumber, setIdNumber] = useState("");
-    const [carPlateNumber, setCarPlateNumber] = useState("");
+    const [vehiclePlateNumber, setVehiclePlateNumber] = useState("");
 
     const [companyName, setCompanyName] = useState("");
 
@@ -56,7 +56,7 @@ export default function RegisterPage() {
                 password,
                 district,
                 idNumber: role === "transporter" ? idNumber : undefined,
-                carPlateNumber: role === "transporter" ? carPlateNumber : undefined,
+                vehiclePlateNumber: role === "transporter" ? vehiclePlateNumber : undefined,
                 companyName: role === "wholesaler" ? companyName : undefined,
             }),
         });
@@ -138,11 +138,11 @@ export default function RegisterPage() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="carPlateNumber">Car Plate Number</Label>
+                                    <Label htmlFor="vehiclePlateNumber">Vehicle Plate Number</Label>
                                     <Input
-                                        id="carPlateNumber"
-                                        value={carPlateNumber}
-                                        onChange={(e) => setCarPlateNumber(e.target.value)}
+                                        id="vehiclePlateNumber"
+                                        value={vehiclePlateNumber}
+                                        onChange={(e) => setVehiclePlateNumber(e.target.value)}
                                     />
                                 </div>
                             </div>
